@@ -12,7 +12,10 @@ class UpgradeAlert extends UpgradeBase {
 
   /// Creates a new [UpgradeAlert].
   UpgradeAlert({Key? key, Upgrader? upgrader, this.child})
-      : super(upgrader ?? Upgrader.sharedInstance, key: key);
+      : super(
+          key: key,
+          upgrader: Upgrader.sharedInstance,
+        );
 
   /// Describes the part of the user interface represented by this widget.
   @override
@@ -22,14 +25,15 @@ class UpgradeAlert extends UpgradeBase {
     }
 
     return FutureBuilder(
-        future: state.initialized,
-        builder: (BuildContext context, AsyncSnapshot<bool> processed) {
-          if (processed.connectionState == ConnectionState.done &&
-              processed.data != null &&
-              processed.data!) {
-            upgrader.checkVersion(context: context);
-          }
-          return child ?? Container();
-        });
+      future: state.initialized,
+      builder: (BuildContext context, AsyncSnapshot<bool> processed) {
+        if (processed.connectionState == ConnectionState.done &&
+            processed.data != null &&
+            processed.data!) {
+          upgrader.checkVersion(context: context);
+        }
+        return child ?? Container();
+      },
+    );
   }
 }

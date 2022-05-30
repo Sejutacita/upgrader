@@ -4,6 +4,8 @@
 
 library upgrader;
 
+export 'implementation/my_upgrade_alert.dart';
+export 'implementation/upgrader_localization.dart';
 export 'src/alert_style_widget.dart';
 export 'src/appcast.dart';
 export 'src/itunes_search_api.dart';

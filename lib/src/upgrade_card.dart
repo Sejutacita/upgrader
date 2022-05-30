@@ -16,7 +16,10 @@ class UpgradeCard extends UpgradeBase {
   /// Creates a new [UpgradeCard].
   UpgradeCard(
       {Key? key, Upgrader? upgrader, this.margin = const EdgeInsets.all(4.0)})
-      : super(upgrader ?? Upgrader.sharedInstance, key: key);
+      : super(
+          key: key,
+          upgrader: upgrader ?? Upgrader.sharedInstance,
+        );
 
   /// Describes the part of the user interface represented by this widget.
   @override
