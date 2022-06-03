@@ -36,6 +36,7 @@ class MyApp extends StatelessWidget {
               appcastConfig: cfg,
               debugLogging: true,
               minAppVersion: '1.1.0',
+              
             ),
             child: Center(child: Text('Checking...')),
           )),

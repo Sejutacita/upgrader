@@ -155,7 +155,7 @@ class Upgrader {
     this.debugDisplayAlways = false,
     this.debugDisplayOnce = false,
     this.debugLogging = false,
-    this.durationUntilAlertAgain = const Duration(days: 3),
+    this.durationUntilAlertAgain = const Duration(days: 1),
     this.onIgnore,
     this.onLater,
     this.onUpdate,
