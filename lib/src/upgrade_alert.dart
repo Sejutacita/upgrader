@@ -11,10 +11,10 @@ class UpgradeAlert extends UpgradeBase {
   final Widget? child;
 
   /// Creates a new [UpgradeAlert].
-  UpgradeAlert({Key? key, Upgrader? upgrader, this.child})
+  const UpgradeAlert({Key? key, required Upgrader upgrader, this.child})
       : super(
           key: key,
-          upgrader: Upgrader.sharedInstance,
+          upgrader: upgrader,
         );
 
   /// Describes the part of the user interface represented by this widget.
